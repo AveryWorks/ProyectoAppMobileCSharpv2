@@ -15,6 +15,10 @@ namespace ProyectoAppMobileCSharp
         public Home()
         {
             InitializeComponent();
+
+            
         }
+
+        
     }
 }

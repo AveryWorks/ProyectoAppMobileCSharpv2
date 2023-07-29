@@ -11,9 +11,11 @@ namespace ProyectoAppMobileCSharp
         {
             InitializeComponent();
 
-            MainPage = Navigation = new NavigationPage(new Login());
+            MainPage = Navigation = new NavigationPage(new Home());
+            
 
         }
+
 
         protected override void OnStart()
         {
