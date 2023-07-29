@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoAppMobileCSharp.Login">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto">
+                <Image Grid.Row="0" Source="OfficeHubListLogo.png" WidthRequest="100"
+                   HeightRequest="100" Margin="0,50,0,30"/>
+
+                <StackLayout Grid.Row="1">
+                    <Label Text="Log In"
+                           FontSize="25"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"
+                           FontAttributes="Bold"/>
+
+                    <Frame BorderColor="#F1f1f1"
+                           BackgroundColor="#F1f1f1"
+                           Margin="15"
+                           Padding="25,0,25,0"
+                           HeightRequest="50"
+                           CornerRadius="15">
+                        <Entry TextColor="#444446"
+                                  FontSize="18"
+                                  Placeholder="Correo"
+                                  PlaceholderColor="#7c7c7c"
+                                  x:Name="usuarioLogin"/>
+                    </Frame>
+
+                    <Frame BorderColor="#F1f1f1"
+                           BackgroundColor="#F1f1f1"
+                           Margin="15"
+                           Padding="25,0,25,0"
+                           HeightRequest="50"
+                           CornerRadius="15">
+
+                        <Entry TextColor="#444446"
+                                  FontSize="18"
+                                  Placeholder="Contraseña"
+                                  IsPassword="True"
+                                  PlaceholderColor="#7c7c7c"
+                                  x:Name="passLogin"/>
+                    </Frame>
+
+                    <RelativeLayout Padding="25">
+                        <CheckBox Color="#d9d9d9"
+                                  IsChecked="False"
+                                  x:Name="checkboxLogin"
+                                  Margin="15,0,0,0"
+                                  CheckedChanged="checkboxLogin_CheckedChanged"/>
+
+                        <Label Text="Mostrar contraseña"
+                               TextColor="#7c7c7c"
+                               FontSize="18"
+                               RelativeLayout.XConstraint="50"
+                               RelativeLayout.YConstraint="3"/>
+
+                        <Button x:Name="btnSignup"
+                            Text="Sign Up"
+                            TextColor="#7c7c7c"
+                            FontSize="18"
+                            BackgroundColor="Transparent"
+                            RelativeLayout.XConstraint="300"
+                            RelativeLayout.YConstraint="-8.8"
+                            Clicked="btnSignup_Clicked"
+                            TextTransform="None"/>
+                    </RelativeLayout>
+
+                    <Button x:Name="btnLogin"
+                            Text="Log in"
+                            TextColor="#ffffff"
+                            BorderWidth="2"
+                            BorderColor="#f3f2ff"
+                            Margin="10,0,10,0"
+                            FontSize="18"
+                            Clicked="btnLogin_Clicked"
+                            HeightRequest="60"
+                            CornerRadius="30"
+                            BackgroundColor="#b363f5"/>
+
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
