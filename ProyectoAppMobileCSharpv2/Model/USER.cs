@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProyectoAppMobileCSharp.Model
+namespace ProyectoAppMobileCSharpv2.Model
 {
     public class USER
     {

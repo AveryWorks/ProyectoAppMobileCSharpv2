@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoAppMobileCSharpv2.Model;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -12,33 +13,20 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Paper : ContentPage
     {
-        public ObservableCollection<string> Items { get; set; }
+        public ObservableCollection<Producto> paperClass;
 
         public Paper()
         {
             InitializeComponent();
-
-            Items = new ObservableCollection<string>
+            paperClass = new ObservableCollection<Producto>
             {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
+                new Producto{Name="Reciclado", Image="reciclado.jpg",Type=Producto.Group.Paper},
+                new Producto{Name="Satinado", Image="satinado.jpg",Type=Producto.Group.Paper},
+                new Producto{Name="Universal", Image="construccion",Type=Producto.Group.Paper}
             };
+            PaperCollectionView.ItemsSource = paperClass;
 
-            MyListView.ItemsSource = Items;
-        }
 
-        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            if (e.Item == null)
-                return;
-
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-
-            //Deselect Item
-            ((ListView)sender).SelectedItem = null;
         }
     }
 }

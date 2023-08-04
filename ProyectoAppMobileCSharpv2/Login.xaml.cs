@@ -4,11 +4,12 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using ProyectoAppMobileCSharp.Model;
+using ProyectoAppMobileCSharpv2.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ProyectoAppMobileCSharp
+
+namespace ProyectoAppMobileCSharpv2
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
@@ -120,6 +121,7 @@ namespace ProyectoAppMobileCSharp
             if (user.keyword == password)
             {
                 return true;
+                
             }
 
             return false;
@@ -128,8 +130,8 @@ namespace ProyectoAppMobileCSharp
         //metodo para cuando se va a realizar el login
         private void btnLogin_Clicked(System.Object sender, System.EventArgs e)
         {
-            clearUSERSList();
-            recoverDB();
+            //clearUSERSList();
+            //recoverDB();
 
             string email = emailLogin.Text;
             string password = passLogin.Text;
