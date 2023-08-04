@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoAppMobileCSharp.Signup">
-    
+
     <StackLayout>
         <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto">
-            <Image Grid.Row="0" Source="LogoOffice.png" WidthRequest="100"
+            <Image Grid.Row="0" Source="LogoOH.png" WidthRequest="100"
                    HeightRequest="70" Margin="0,50,0,30"/>
 
             <StackLayout Grid.Row="1">
@@ -26,7 +26,7 @@
                                   FontSize="18"
                                   Placeholder="Nombre"
                                   PlaceholderColor="#7c7c7c"
-                                  x:Name="nombreSignup"/>
+                                  x:Name="nameSignup"/>
                 </Frame>
 
                 <Frame BorderColor="#F1f1f1"
@@ -40,7 +40,7 @@
                                   FontSize="18"
                                   Placeholder="Correo"
                                   PlaceholderColor="#7c7c7c"
-                                  x:Name="correoSignup"/>
+                                  x:Name="emailSignup"/>
                 </Frame>
 
                 <Frame BorderColor="#F1f1f1"
@@ -86,7 +86,9 @@
                             BackgroundColor="#b363f5"/>
 
             </StackLayout>
+
         </Grid>
+
     </StackLayout>
-    
+
 </ContentPage>

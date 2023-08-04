@@ -5,8 +5,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto">
-                <Image Grid.Row="0" Source="OfficeHubListLogo.png" WidthRequest="100"
+                <Image Grid.Row="0" Source="LogoOH.png" WidthRequest="100"
                    HeightRequest="100" Margin="0,50,0,30"/>
+                <!--<Label Text="test" x:Name="test"></Label>-->
 
                 <StackLayout Grid.Row="1">
                     <Label Text="Log In"
@@ -25,7 +26,7 @@
                                   FontSize="18"
                                   Placeholder="Correo"
                                   PlaceholderColor="#7c7c7c"
-                                  x:Name="usuarioLogin"/>
+                                  x:Name="emailLogin"/>
                     </Frame>
 
                     <Frame BorderColor="#F1f1f1"
@@ -41,6 +42,7 @@
                                   IsPassword="True"
                                   PlaceholderColor="#7c7c7c"
                                   x:Name="passLogin"/>
+
                     </Frame>
 
                     <RelativeLayout Padding="25">
