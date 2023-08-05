@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ProyectoAppMobileCSharp
+namespace ProyectoAppMobileCSharpv2
 {
     public partial class App : Application
     {
@@ -11,7 +11,7 @@ namespace ProyectoAppMobileCSharp
         {
             InitializeComponent();
 
-            MainPage = Navigation = new NavigationPage(new Home());
+            MainPage = Navigation = new NavigationPage(new Login());
             
 
         }
