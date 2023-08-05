@@ -29,7 +29,7 @@ namespace ProyectoAppMobileCSharpv2
 
             //Se crea la lista donde de van a guardar los usuarios
             USERS = new List<USER>();
-            recoverDB();
+            
 
             BindingContext = this;
 
@@ -44,11 +44,10 @@ namespace ProyectoAppMobileCSharpv2
         }
 
         //metodo predeterminado que limpia la lista de los usuarios
-        public void clearUSERSList()
-        {
-            USERS.Clear();
-        }
-
+        //public void clearUSERSList()
+        //{
+        //    USERS.Clear();
+        //}
 
         //metodo que permite que se muestre o no la contraseña en el entry
         void checkboxLogin_CheckedChanged(System.Object sender, Xamarin.Forms.CheckedChangedEventArgs e)
@@ -64,8 +63,9 @@ namespace ProyectoAppMobileCSharpv2
         }
 
         //metodo que recupera los usuario de la base de datos y los guarda en la lista que se creó antes (USERS)
-        public async void recoverDB()
+        public async Task recoverDB()
         {
+            //clearUSERSList();
             string user_idx = "";
             string user_namex = "";
             string emailx = "";
@@ -100,10 +100,6 @@ namespace ProyectoAppMobileCSharpv2
         //metodo que valida el usuario según los usuarios en la lista de USERS contra los entries de la persona
         public bool ValidateUser(string email, string password)
         {
-            //se llama al método de recoverDB para agregarlos a la lista de los USERS y poder realizar la validadción
-            clearUSERSList();
-            recoverDB();
-
             //para revisar que los entries no estén vacios
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
@@ -122,17 +118,16 @@ namespace ProyectoAppMobileCSharpv2
             if (user.keyword == password)
             {
                 return true;
-                
+
             }
 
             return false;
         }
 
         //metodo para cuando se va a realizar el login
-        private void btnLogin_Clicked(System.Object sender, System.EventArgs e)
+        private async void btnLogin_Clicked(System.Object sender, System.EventArgs e)
         {
-            //clearUSERSList();
-            //recoverDB();
+            await recoverDB();
 
             string email = emailLogin.Text;
             string password = passLogin.Text;
@@ -140,7 +135,9 @@ namespace ProyectoAppMobileCSharpv2
             if (ValidateUser(email, password))
             {
                 //si se logró validar el usuario
+                popUpConf();
                 ((NavigationPage)this.Parent).PushAsync(new Home());
+
                 cleanInputs();
             }
             else
@@ -151,18 +148,23 @@ namespace ProyectoAppMobileCSharpv2
             }
         }
 
-
         //si la persona no tiene un usuario, puede entrar aquí para crear uno
         //metodo que abre la ventana del signup
         void btnSignup_Clicked(System.Object sender, System.EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new Signup());
+            cleanInputs();
         }
 
         //metodo que genera el mensaje de error
         public async Task popUpPass()
         {
             await DisplayAlert("Información incorrecta", "El correo o contraseña ingresados son incorrectos. Inténtalo de nuevo.", "OK");
+        }
+
+        public async Task popUpConf()
+        {
+            await DisplayAlert("Información correcta", "Se validaron el correo y contraseña.", "OK");
         }
     }
 }
