@@ -15,6 +15,7 @@ namespace ProyectoAppMobileCSharpv2
         public Home()
         {
             InitializeComponent();
+
             btnCompu.Clicked += BtnCompu_Clicked;
             btnElec.Clicked += BtnElec_Clicked;
             btnIlum.Clicked += BtnIlum_Clicked;
@@ -26,7 +27,7 @@ namespace ProyectoAppMobileCSharpv2
 
         private void BtnPapel_Clicked(object sender, EventArgs e)
         {
-            ((NavigationPage)this.Parent).PushAsync(new ProyectoAppMobileCSharpv2.ProductsView.Paper());
+            ((NavigationPage)this.Parent).PushAsync(new ProductsView.Paper());
         }
 
         private void BtnOficina_Clicked(object sender, EventArgs e)

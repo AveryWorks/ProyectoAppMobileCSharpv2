@@ -17,6 +17,7 @@ namespace ProyectoAppMobileCSharpv2
     {
         //String de la conección con el REST API de la base de datos en la nube
         private string url = "https://gd0f6d2a85d7ffa-proyectofinalc.adb.us-chicago-1.oraclecloudapps.com/ords/admin/modulo1/Plantilla1";
+        //private string url = "https://g287196683f9c6a-i59czvwjkowzalch.adb.us-chicago-1.oraclecloudapps.com/ords/admin/usuarios";
 
         HttpClient cliente = new HttpClient();
 
