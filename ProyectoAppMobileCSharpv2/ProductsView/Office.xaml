@@ -1,29 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyectoAppMobileCSharpv2.ProductsView.Paper">
-
+             x:Class="ProyectoAppMobileCSharpv2.ProductsView.Office">
     <RelativeLayout>
-
         <Grid VerticalOptions="FillAndExpand">
 
-            <Image 
-                x:Name="Paperbackground" 
-                Source="paperBG" 
-                Aspect="Fill"
-                VerticalOptions="FillAndExpand"></Image>
         </Grid>
-
-        <CollectionView x:Name="PaperCollectionView" >
+        <CollectionView x:Name="OfficeCollectionView" >
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    
                     <Grid Padding="10"
                           Margin="0,20,0,0"
                           
                           >
-                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
@@ -33,7 +23,7 @@
                             <ColumnDefinition Width="300"/>
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
-                        
+
                         <Image Grid.RowSpan="2"
                                Source="{Binding Image}"
                                Aspect="AspectFill"
@@ -68,9 +58,4 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
     </RelativeLayout>
-    
-    
-  
-    
 </ContentPage>
-    
