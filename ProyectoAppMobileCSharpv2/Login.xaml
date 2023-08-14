@@ -71,7 +71,7 @@
 
                     <Button x:Name="btnLogin"
                             Text="Log in"
-                            TextColor="#ffffff"
+                            TextColor="#50575E"
                             BorderWidth="2"
                             BorderColor="#f3f2ff"
                             Margin="10,0,10,0"
@@ -79,7 +79,7 @@
                             Clicked="btnLogin_Clicked"
                             HeightRequest="60"
                             CornerRadius="30"
-                            BackgroundColor="#b363f5"/>
+                            BackgroundColor="#DFE5ED"/>
 
                 </StackLayout>
 

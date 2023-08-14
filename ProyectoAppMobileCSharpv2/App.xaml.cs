@@ -11,8 +11,7 @@ namespace ProyectoAppMobileCSharpv2
         {
             InitializeComponent();
 
-            MainPage = Navigation = new NavigationPage(new Login());
-            
+            MainPage = Navigation = new NavigationPage(new Home());
 
         }
 

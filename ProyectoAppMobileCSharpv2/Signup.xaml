@@ -75,15 +75,14 @@
 
                 <Button x:Name="btnSignup"
                             Text="Sign up"
-                            TextColor="#ffffff"
+                            TextColor="#50575E"
                             BorderWidth="2"
-                            BorderColor="#f3f2ff"
                             Margin="10,0,10,0"
                             FontSize="18"
                             Clicked="btnSignup_Clicked"
                             HeightRequest="60"
                             CornerRadius="30"
-                            BackgroundColor="#b363f5"/>
+                            BackgroundColor="#DFE5ED"/>
 
             </StackLayout>
 
