@@ -62,9 +62,13 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
             }
         }
 
-        public void AddButtonClicked(object sender, EventArgs e)
+        public async void AddButtonClicked(object sender, EventArgs e)
         {
-            popUpPass("Presionaste el boton Anadir");
+            if (sender is ImageButton button && button.BindingContext is Producto product)
+            {
+                string message = $"ID: {product.ID}";
+                await popUpPass(message);
+            }
         }
 
         public async Task popUpPass(string Msg)

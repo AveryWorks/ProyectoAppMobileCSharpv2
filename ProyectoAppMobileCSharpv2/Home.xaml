@@ -6,9 +6,9 @@
     <ContentPage.ToolbarItems Name="ToolBarItems">
 
         <ToolbarItem IconImageSource="Logo_App.png" />
-        <ToolbarItem IconImageSource="shoppingcart.png"/>
-        <ToolbarItem Text="About" Priority="2" Order="Secondary" />
-        <ToolbarItem Text="Logout" Priority="3" Order="Secondary" />
+        <ToolbarItem IconImageSource="shoppingcart.png" x:Name="Carrito"/>
+        <ToolbarItem Text="Cómo hacer compras inteligentes" Priority="2" Order="Secondary" x:Name="VidRecom"/>
+        <ToolbarItem Text="Logout" Priority="3" Order="Secondary" x:Name="Logout"/>
 
     </ContentPage.ToolbarItems>
 

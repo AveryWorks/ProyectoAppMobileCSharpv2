@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ProyectoAppMobileCSharpv2;
 
 namespace ProyectoAppMobileCSharpv2
 {
@@ -22,9 +22,24 @@ namespace ProyectoAppMobileCSharpv2
             btnMuebles.Clicked += BtnMuebles_Clicked;
             btnOficina.Clicked += BtnOficina_Clicked;
             btnPapel.Clicked += BtnPapel_Clicked;
+
+            Carrito.Clicked += Carrito_Clicked;
+            Logout.Clicked += Logout_Clicked;
+
+            
             
         }
-         
+
+        private void Logout_Clicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Carrito_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new ProductsView.Carrito());
+        }
+
         private void BtnPapel_Clicked(object sender, EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new ProductsView.Paper());
