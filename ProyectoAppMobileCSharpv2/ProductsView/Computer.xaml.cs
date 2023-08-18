@@ -34,6 +34,7 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
             
             computerClass = new ObservableCollection<Producto>();
             LoadDataAsync();
+
             ComputerCollectionView.ItemsSource = computerClass;
         }
 
