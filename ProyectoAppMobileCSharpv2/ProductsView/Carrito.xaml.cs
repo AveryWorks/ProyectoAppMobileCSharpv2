@@ -13,21 +13,20 @@ using Xamarin.Forms.Xaml;
 namespace ProyectoAppMobileCSharpv2.ProductsView
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Forniture : ContentPage
+    public partial class Carrito : ContentPage
     {
-
-        private string url = "https://gd0f6d2a85d7ffa-proyectofinalc.adb.us-chicago-1.oraclecloudapps.com/ords/admin/Modulo2/Plantilla1";
-
+        private string url = "https://gd0f6d2a85d7ffa-proyectofinalc.adb.us-chicago-1.oraclecloudapps.com/ords/admin/modulo1/Plantilla1";
+        
         HttpClient cliente = new HttpClient();
 
-        public ObservableCollection<Producto> fornitureClass;
-
-        public Forniture()
+        public ObservableCollection<Producto> cartClass;
+        public Carrito()
         {
+            
             InitializeComponent();
-            fornitureClass = new ObservableCollection<Producto>();
-            LoadDataAsync();
-            FornitureCollectionView.ItemsSource = fornitureClass;
+            cartClass = new ObservableCollection<Producto>();
+            CarritoCollectionView.ItemsSource = cartClass;
+
         }
 
         public async Task LoadDataAsync()
@@ -44,9 +43,9 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
 
                     foreach (var product in products)
                     {
-                        if (product.Type == "Forniture")
+                        if (product.Type == "Computer")
                         {
-                            fornitureClass.Add(product);
+                            cartClass.Add(product);
                         }
 
                     }
@@ -62,18 +61,14 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
             }
         }
 
-        public async void AddButtonClicked(object sender, EventArgs e)
-        {
-            if (sender is ImageButton button && button.BindingContext is Producto product)
-            {
-                string message = $"ID: {product.ID}";
-                await popUpPass(message);
-            }
-        }
-
         public async Task popUpPass(string Msg)
         {
             await DisplayAlert("Mensaje", Msg, "OK");
+        }
+
+        private void RemoveButtonClicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

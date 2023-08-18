@@ -19,6 +19,8 @@ namespace ProyectoAppMobileCSharpv2
         //private string url = "https://g287196683f9c6a-i59czvwjkowzalch.adb.us-chicago-1.oraclecloudapps.com/ords/admin/usuarios";
 
         HttpClient cliente = new HttpClient();
+        public static string UsrSesion {get; set;}
+        
 
         //La lista donde se guardan los usuarios recuperados de la base de datos
         public IList<USER> USERS { get; private set; }
@@ -26,7 +28,7 @@ namespace ProyectoAppMobileCSharpv2
         public Login()
         {
             InitializeComponent();
-
+            UsrSesion = "";
             //Se crea la lista donde de van a guardar los usuarios
             USERS = new List<USER>();
             
@@ -117,6 +119,7 @@ namespace ProyectoAppMobileCSharpv2
             //para comparar también la contraseña
             if (user.keyword == password)
             {
+                UsrSesion = user.user_id;
                 return true;
 
             }

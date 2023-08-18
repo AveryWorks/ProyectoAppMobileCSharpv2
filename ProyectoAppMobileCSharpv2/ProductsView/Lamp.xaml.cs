@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,29 +15,64 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Lamp : ContentPage
     {
+        private string url = "https://gd0f6d2a85d7ffa-proyectofinalc.adb.us-chicago-1.oraclecloudapps.com/ords/admin/Modulo2/Plantilla1";
+
+        HttpClient cliente = new HttpClient();
         public ObservableCollection<Producto> lampClass;
 
         public Lamp()
         {
             InitializeComponent();
+            lampClass = new ObservableCollection<Producto>();
+            LoadDataAsync();
 
-            lampClass = new ObservableCollection<Producto>
-            {
-                new Producto{Name="Lampara Escritorio", Image="lampEsc.jpg",Price="2500",Type=Producto.Group.Lamp},
-                new Producto{Name="Lampara Colgante", Image="lampCol.jpg",Price="2500",Type=Producto.Group.Lamp},
-                new Producto{Name="Lampara Pared Cuadrada", Image="lampPar.jpg",Price="2500",Type=Producto.Group.Lamp},
-                
-            };
             LampCollectionView.ItemsSource = lampClass;
         }
 
-        public void AddButtonClicked(object sender, EventArgs e)
+        public async Task LoadDataAsync()
         {
-            popUpPass("Presionaste el boton Anadir");
+            try
+            {
+                var response = await cliente.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var jsonObject = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JObject>(content);
+                    var jsonArray = jsonObject["items"].ToString();
+                    var products = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Producto>>(jsonArray);
+
+                    foreach (var product in products)
+                    {
+                        if (product.Type == "Lamp")
+                        {
+                            lampClass.Add(product);
+                        }
+
+                    }
+                }
+                else
+                {
+                    await popUpPass("No se pudo obtener los datos");
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
         }
+
+        public async void AddButtonClicked(object sender, EventArgs e)
+        {
+            if (sender is ImageButton button && button.BindingContext is Producto product)
+            {
+                string message = $"ID: {product.ID}";
+                await popUpPass(message);
+            }
+        }
+
         public async Task popUpPass(string Msg)
         {
-            await DisplayAlert("mensaje", Msg, "OK");
+            await DisplayAlert("Mensaje", Msg, "OK");
         }
     }
 }
