@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyectoAppMobileCSharp.Home">
+             x:Class="ProyectoAppMobileCSharpv2.Home">
 
     <ContentPage.ToolbarItems Name="ToolBarItems">
 
         <ToolbarItem IconImageSource="Logo_App.png" />
-        <ToolbarItem IconImageSource="shoppingcart.png"/>
-        <ToolbarItem Text="About" Priority="2" Order="Secondary" />
-        <ToolbarItem Text="Logout" Priority="3" Order="Secondary" />
+        <ToolbarItem IconImageSource="shoppingcart.png" x:Name="Carrito"/>
+        <ToolbarItem Text="Cómo hacer compras inteligentes" Priority="2" Order="Secondary" x:Name="VidRecom"/>
+        <ToolbarItem Text="Logout" Priority="3" Order="Secondary" x:Name="Logout"/>
 
     </ContentPage.ToolbarItems>
 

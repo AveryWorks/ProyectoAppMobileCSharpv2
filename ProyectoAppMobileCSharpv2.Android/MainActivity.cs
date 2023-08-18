@@ -4,7 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
-using ProyectoAppMobileCSharp;
+using ProyectoAppMobileCSharpv2;
 
 namespace ProyectoAppMobileCSharpv2.Droid
 {

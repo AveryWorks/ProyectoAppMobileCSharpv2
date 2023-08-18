@@ -1,4 +1,5 @@
-﻿using ProyectoAppMobileCSharp.Model;
+﻿using Newtonsoft.Json;
+using ProyectoAppMobileCSharpv2.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,28 +10,39 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ProyectoAppMobileCSharp
+namespace ProyectoAppMobileCSharpv2
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Signup : ContentPage
     {
-        private string url = "https://g287196683f9c6a-i59czvwjkowzalch.adb.us-chicago-1.oraclecloudapps.com/ords/admin/metadata-catalog/";
+        //String de la conección con el REST API de la base de datos en la nube
+        private string url = "https://gd0f6d2a85d7ffa-proyectofinalc.adb.us-chicago-1.oraclecloudapps.com/ords/admin/modulo1/Plantilla1";
+        //private string url = "https://g287196683f9c6a-i59czvwjkowzalch.adb.us-chicago-1.oraclecloudapps.com/ords/admin/usuarios";
+
         HttpClient cliente = new HttpClient();
 
-        public IList<Usuario> CAT_USUARIOS { get; private set; }
+        //La lista donde se guardan los usuarios recuperados de la base de datos
+        public IList<USER> USERS { get; private set; }
+
+        //para crear el id del usuario de forma random
+        static Random rnd = new Random();
 
         public Signup()
         {
             InitializeComponent();
 
-            CAT_USUARIOS = new List<Usuario>();
+            //Se crea la lista donde de van a guardar los usuarios
+            USERS = new List<USER>();
 
-            BindingContext = this;
         }
 
-        public async Task popUpSignup()
+        //metodo predeterminado, para no repetir código, que limpia la interfaz del login
+        public void cleanInputs()
         {
-            await DisplayAlert("Sign Up", "Tu cuenta ha sido creada.", "OK");
+            nameSignup.Text = "";
+            emailSignup.Text = "";
+            passSignup.Text = "";
+            checkboxSignup.IsChecked = false;
         }
 
         void checkboxSignup_CheckedChanged(System.Object sender, Xamarin.Forms.CheckedChangedEventArgs e)
@@ -45,31 +57,60 @@ namespace ProyectoAppMobileCSharp
             }
         }
 
-        void btnSignup_Clicked(System.Object sender, System.EventArgs e)
+        public async void insertBD()
         {
-            popUpSignup();
-            nombreSignup.Text = "";
-            correoSignup.Text = "";
-            passSignup.Text = "";
-        }
-        /*public async void AgregarenBD()
-        {
-            Usuario CA = new Usuario
+            int r = rnd.Next(1000, 9999);
+
+            USER user = new USER
             {
-                NOMBRE_USUARIO = usuarioLogin.Text,
-                CONTRASENA = passLogin.Text
+                user_id = r.ToString(),
+                user_name = nameSignup.Text,
+                email = emailSignup.Text,
+                keyword = passSignup.Text
             };
 
-            var json = JsonConvert.SerializeObject(CA);
-            //var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+            var json = JsonConvert.SerializeObject(user);
+
             var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
             var response = await cliente.PostAsync(url, contentJson);
+
             if (response.StatusCode == System.Net.HttpStatusCode.Created)
             {
                 //await DisplayAlert("Datos", "Se actualizó correctamente la info");
-                //lblstatus.Text = "Se ingresó correctamente el registro";
+                userCreated();
             }
-            else { popUpPass(); }
-        }*/
+            else
+            {
+                popUpPass();
+            }
+        }
+
+        private void btnSignup_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (nameSignup.Text != "" && emailSignup.Text != "" && passSignup.Text != "")
+            {
+                //si se logró validar el usuario
+                insertBD();
+                cleanInputs();
+            }
+            else
+            {
+                //si no existe, se le muestra un mensaje de error
+                popUpPass();
+                cleanInputs();
+            }
+        }
+
+        //metodo que genera el mensaje de error
+        public async Task popUpPass()
+        {
+            await DisplayAlert("Información incorrecta", "El correo, nombre o contraseña ingresados son incorrectos. Inténtalo de nuevo.", "OK");
+        }
+
+        public async Task userCreated()
+        {
+            await DisplayAlert("Información correcta", "Usuario creado correctamente. Vuelve a la página inicial de Login para entrar a la aplicación.", "OK");
+        }
     }
 }
