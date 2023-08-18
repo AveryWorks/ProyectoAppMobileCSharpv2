@@ -15,7 +15,7 @@ namespace ProyectoAppMobileCSharpv2.Model
 
         public enum Group
         {
-            Paper, Computer, Lamps
+            Paper, Electronics, Computer, Lamp, Forniture, Office
         }
     }
 }

@@ -24,7 +24,7 @@ namespace ProyectoAppMobileCSharpv2
             btnPapel.Clicked += BtnPapel_Clicked;
             
         }
-
+         
         private void BtnPapel_Clicked(object sender, EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new ProductsView.Paper());
@@ -32,27 +32,27 @@ namespace ProyectoAppMobileCSharpv2
 
         private void BtnOficina_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            ((NavigationPage)this.Parent).PushAsync(new ProductsView.Office());
         }
 
         private void BtnMuebles_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            ((NavigationPage)this.Parent).PushAsync(new ProductsView.Forniture());
         }
 
         private void BtnIlum_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            ((NavigationPage)this.Parent).PushAsync(new ProductsView.Lamp());
         }
 
         private void BtnElec_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            ((NavigationPage)this.Parent).PushAsync(new ProductsView.Electronics());
         }
 
         private void BtnCompu_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            ((NavigationPage)this.Parent).PushAsync(new ProductsView.Computer());
         }
     }
 }

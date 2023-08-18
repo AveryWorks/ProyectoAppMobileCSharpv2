@@ -22,9 +22,9 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
             
             paperClass = new ObservableCollection<Producto>
             {
-                new Producto{Name="Reciclado", Image="reciclado.jpg",Type=Producto.Group.Paper},
-                new Producto{Name="Satinado", Image="satinado.jpg",Type=Producto.Group.Paper},
-                new Producto{Name="Universal", Image="imprimir.jpg",Type=Producto.Group.Paper}
+                new Producto{Name="Reciclado", Image="reciclado.jpg", Price="2500",Type=Producto.Group.Paper},
+                new Producto{Name="Satinado", Image="satinado.jpg",Price="2500",Type=Producto.Group.Paper},
+                new Producto{Name="Universal", Image="imprimir.jpg",Price="2500",Type=Producto.Group.Paper}
             };
             PaperCollectionView.ItemsSource = paperClass;
 
