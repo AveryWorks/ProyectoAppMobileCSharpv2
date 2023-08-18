@@ -22,9 +22,9 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
 
             lampClass = new ObservableCollection<Producto>
             {
-                new Producto{Name="Lampara Escritorio", Image="lampEsc.jpg",Price="2500",Type=Producto.Group.Lamp},
-                new Producto{Name="Lampara Colgante", Image="lampCol.jpg",Price="2500",Type=Producto.Group.Lamp},
-                new Producto{Name="Lampara Pared Cuadrada", Image="lampPar.jpg",Price="2500",Type=Producto.Group.Lamp},
+                new Producto{Name="Lampara Escritorio", Image="lampEsc.jpg",Price="2500"},
+                new Producto{Name="Lampara Colgante", Image="lampCol.jpg",Price="2500"},
+                new Producto{Name="Lampara Pared Cuadrada", Image="lampPar.jpg",Price="2500"},
                 
             };
             LampCollectionView.ItemsSource = lampClass;

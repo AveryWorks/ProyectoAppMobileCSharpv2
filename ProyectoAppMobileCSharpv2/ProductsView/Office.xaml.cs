@@ -22,9 +22,9 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
 
             officeClass = new ObservableCollection<Producto>
             {
-                new Producto{Name="ECOTANK L1250 WIFI", Image="Impresora1.jpg",Price="2500",Type=Producto.Group.Office},
-                new Producto{Name="TERMICA TM-M30II", Image="Impresora2.jpg",Price="2500",Type=Producto.Group.Office},
-                new Producto{Name="Premium M10", Image="Trituradora.jpg",Price="2500",Type=Producto.Group.Office},
+                new Producto{Name="ECOTANK L1250 WIFI", Image="Impresora1.jpg",Price="2500"},
+                new Producto{Name="TERMICA TM-M30II", Image="Impresora2.jpg",Price="2500"},
+                new Producto{Name="Premium M10", Image="Trituradora.jpg",Price="2500"},
             };
             OfficeCollectionView.ItemsSource = officeClass;
         }

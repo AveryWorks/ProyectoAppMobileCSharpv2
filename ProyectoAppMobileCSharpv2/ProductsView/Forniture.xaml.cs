@@ -22,9 +22,9 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
 
             fornitureClass = new ObservableCollection<Producto>
             {
-                new Producto{Name="Escritorio 2 niveles", Image="EscriDosNiv.jpg",Price="3500",Type=Producto.Group.Forniture},
-                new Producto{Name="Escritorio forma L", Image="EscriFormL.jpg",Price="2500",Type=Producto.Group.Forniture},
-                new Producto{Name="Escritorio gabetero", Image="EscriGab.jpg",Price="2500",Type=Producto.Group.Forniture},
+                new Producto{Name="Escritorio 2 niveles", Image="EscriDosNiv.jpg",Price="3500"},
+                new Producto{Name="Escritorio forma L", Image="EscriFormL.jpg",Price="2500"},
+                new Producto{Name="Escritorio gabetero", Image="EscriGab.jpg",Price="2500"},
             };
             FornitureCollectionView.ItemsSource = fornitureClass;
         }

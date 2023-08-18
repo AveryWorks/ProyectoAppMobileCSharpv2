@@ -23,11 +23,11 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
 
             electronicsClass = new ObservableCollection<Producto>
             {
-                new Producto{Name="Parlante", Image="parlante.jpg",Price="2500",Type=Producto.Group.Electronics},
-                new Producto{Name="Bateria Portatil", Image="powerbank.jpg",Price="2500",Type=Producto.Group.Electronics},
-                new Producto{Name="Headset", Image="audifonos_headset.jpg",Price="2500",Type=Producto.Group.Electronics},
-                new Producto{Name="Chromecast", Image="chromecast.jpg",Price="2500",Type=Producto.Group.Electronics},
-                new Producto{Name="Proyector", Image="videobin.jpg",Price="2500",Type=Producto.Group.Electronics},
+                new Producto{Name="Parlante", Image="parlante.jpg",Price="2500"},
+                new Producto{Name="Bateria Portatil", Image="powerbank.jpg",Price="2500"},
+                new Producto{Name="Headset", Image="audifonos_headset.jpg",Price="2500"},
+                new Producto{Name="Chromecast", Image="chromecast.jpg",Price="2500"},
+                new Producto{Name="Proyector", Image="videobin.jpg",Price="2500"},
             };
             ElectronicCollectionView.ItemsSource = electronicsClass;
         }
