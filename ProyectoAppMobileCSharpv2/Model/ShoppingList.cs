@@ -11,10 +11,12 @@ namespace ProyectoAppMobileCSharpv2.Model
 {
     public class ShoppingList
     {
-        public string ShoppingListID { get; set; }
-        public string SpList_UserID { get; set; }
-        public string SpProdID { get; set; }
+        public string shoppinglistid { get; set; }
+        public string splist_userid { get; set; }
+        public string spprodid { get; set; }
     }
+
+    
 } 
 
 

@@ -16,18 +16,24 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
     public partial class Office : ContentPage
     {
         private string url = "https://gd0f6d2a85d7ffa-proyectofinalc.adb.us-chicago-1.oraclecloudapps.com/ords/admin/Modulo2/Plantilla1";
-
+        static Random rnd = new Random();
         HttpClient cliente = new HttpClient();
-
-
+        public IList<ShoppingList> ShpList { get; private set; }
         public ObservableCollection<Producto> officeClass;
 
         public Office()
         {
             InitializeComponent();
+            ShpList = new List<ShoppingList>();
             officeClass = new ObservableCollection<Producto>();
             LoadDataAsync();
             OfficeCollectionView.ItemsSource = officeClass;
+        }
+
+        public string GetUser()
+        {
+            string UsrActual;
+            return UsrActual = Login.UsrSesion;
         }
 
         public async Task LoadDataAsync()
@@ -66,9 +72,76 @@ namespace ProyectoAppMobileCSharpv2.ProductsView
         {
             if (sender is ImageButton button && button.BindingContext is Producto product)
             {
-                string message = $"ID: {product.ID}";
-                await popUpPass(message);
+
+                try
+                {
+
+                    string addProdID = product.ID;
+                    string addUser_ID = GetUser();
+
+                    //string message = $"ID: {addProdID} User_ID:{addUser_ID}";
+                    //await popUpPass(message);
+
+                    insertBD(addUser_ID, addProdID);
+
+                }
+                catch
+                {
+
+                    await popUpPass("No se pudo agregar a la tabla");
+
+                }
             }
+        }
+
+        public async void insertBD(string addUser_ID, string addProdID)
+        {
+            int r = rnd.Next(1, 9999);
+
+            try
+            {
+                // Crear una instancia de HttpClient
+                using (HttpClient client = new HttpClient())
+                {
+                    // La URL de la API RESTful de Oracle Cloud
+                    string url2 = "https://gd0f6d2a85d7ffa-proyectofinalc.adb.us-chicago-1.oraclecloudapps.com/ords/admin/Modulo3/Plantilla1";
+
+                    // Crear un objeto JSON con los datos a insertar
+                    ShoppingList data = new ShoppingList
+                    {
+                        shoppinglistid = r + "",
+                        splist_userid = addUser_ID + "",
+                        spprodid = addProdID + ""
+                    };
+
+                    // Serializar el objeto JSON a una cadena
+                    var json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
+
+                    // Crear un contenido JSON para la solicitud POST
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    // Realizar una solicitud POST a la URL
+                    HttpResponseMessage response = await client.PostAsync(url2, content);
+
+                    // Comprobar si la solicitud se realizó con éxito
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // El registro se insertó correctamente
+                        popUpPass("Se agregó al carrito");
+
+                    }
+                    else
+                    {
+                        // Hubo un problema al insertar el registro
+                        popUpPass("No se agregó al carrito");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
+
         }
 
         public async Task popUpPass(string Msg)
