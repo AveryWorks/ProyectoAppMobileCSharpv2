@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoAppMobileCSharpv2.MapaTiendas">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid Margin="30,30,10,40">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                    
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Row="0" Grid.Column="0" Source="map_marker.png" HeightRequest="30"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Tiendas Cercanas" FontAttributes="Bold" FontSize="Title" TextTransform="Uppercase"/>
+                
+                <Label Grid.Row="1" Grid.Column="1" Text="Office Depot Montes de Oca" FontAttributes="Bold" FontSize="20"/>
+                <Image Grid.Row="2" Grid.Column="0" Source="phone_flip.png" HeightRequest="30"/>
+                <Label Grid.Row="2" Grid.Column="1" Text="Teléfono: 2234 9890" FontSize="15"/>
+                <Entry Grid.Row="3" Grid.Column="0" x:Name="EntryLatitude1" Text="9.932582" Keyboard="Numeric" IsVisible="false"/>
+                <Entry Grid.Row="4" Grid.Column="0" x:Name="EntryLongitud1" Text="-84.054309" Keyboard="Numeric" IsVisible="false" />
+                <Button Grid.Row="5" Grid.Column="1" Text="Abrir en Google Maps" x:Name="btnMap1" BackgroundColor="#ae56f6" TextColor="White" CornerRadius="5" HorizontalOptions="Start"/>
+
+                <Label Grid.Row="6" Grid.Column="1" Text="Artea Tibás" FontAttributes="Bold" FontSize="20"/>
+                <Image Grid.Row="7" Grid.Column="0" Source="phone_flip.png" HeightRequest="30"/>
+                <Label Grid.Row="7" Grid.Column="1" Text="Teléfono: 2224 1010" FontSize="15"/>
+                <Entry Grid.Row="8" Grid.Column="0" x:Name="EntryLatitude2" Text="9.933565" Keyboard="Numeric" IsVisible="false"/>
+                <Entry Grid.Row="9" Grid.Column="0" x:Name="EntryLongitud2" Text="-84.051239" Keyboard="Numeric" IsVisible="false"/>
+                <Button Grid.Row="10" Grid.Column="1" Text="Abrir en Google Maps" x:Name="btnMap2" BackgroundColor="#ae56f6" TextColor="White" CornerRadius="5" HorizontalOptions="Start"/>
+
+                <Label Grid.Row="11" Grid.Column="1" Text="Universal Curridabat" FontAttributes="Bold" FontSize="20" />
+                <Image Grid.Row="12" Grid.Column="0" Source="phone_flip.png" HeightRequest="30"/>
+                <Label Grid.Row="12" Grid.Column="1" Text="Teléfono: 2222 2222" FontSize="15"/>
+                <Entry Grid.Row="13" Grid.Column="0" x:Name="EntryLatitude3" Text="9.917415" Keyboard="Numeric" IsVisible="false"/>
+                <Entry Grid.Row="14" Grid.Column="0" x:Name="EntryLongitud3" Text="-84.046640" Keyboard="Numeric" IsVisible="false"/>
+                <Button Grid.Row="15" Grid.Column="1" Text="Abrir en Google Maps" x:Name="btnMap3" BackgroundColor="#ae56f6" TextColor="White" CornerRadius="5" HorizontalOptions="Start"/>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

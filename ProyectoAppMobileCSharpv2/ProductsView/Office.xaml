@@ -5,6 +5,11 @@
     <RelativeLayout>
         <Grid VerticalOptions="FillAndExpand">
 
+            <Image 
+                x:Name="Paperbackground" 
+                Source="paperBG" 
+                Aspect="Fill"
+                VerticalOptions="FillAndExpand"></Image>
         </Grid>
         <CollectionView x:Name="OfficeCollectionView" >
 

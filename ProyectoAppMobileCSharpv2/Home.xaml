@@ -5,10 +5,12 @@
 
     <ContentPage.ToolbarItems Name="ToolBarItems">
 
-        <ToolbarItem IconImageSource="Logo_App.png" />
+        <!--ToolbarItem IconImageSource="Logo_App.png" /-->
         <ToolbarItem IconImageSource="shoppingcart.png" x:Name="Carrito"/>
-        <ToolbarItem Text="Cómo hacer compras inteligentes" Priority="2" Order="Secondary" x:Name="VidRecom"/>
-        <ToolbarItem Text="Logout" Priority="3" Order="Secondary" x:Name="Logout"/>
+        <ToolbarItem Text="Cómo hacer compras inteligentes" Priority="2" Order="Secondary" x:Name="btnVideo"/>
+        <ToolbarItem Text="Ayuda" Priority="4" Order="Secondary" x:Name="Ayuda"/>
+        <ToolbarItem Text="Perfil" Priority="3" Order="Secondary" x:Name="Perfil"/>
+        <ToolbarItem Text="Tiendas Cercanas" Priority="4" Order="Secondary" x:Name="btnMapa"/>
 
     </ContentPage.ToolbarItems>
 
@@ -20,32 +22,33 @@
                   RadiusX="600"
                   RadiusY="380"
                   Center="275,0"/>
+                
             </Image.Clip>
             
         </Image>
             <StackLayout>
-            <Label Text="Productos" FontAttributes="Bold" FontSize="Title" TextTransform="Uppercase" TextColor="#50575E" Margin="17,-25,15,0"/>
+            <Label Text="Productos" FontAttributes="Bold" FontSize="Title" TextTransform="Uppercase" TextColor="#6612A6" Margin="40,-25,15,0"/>
 
-            <Grid Margin="30,25,10,40">
+            <Grid Margin="40,25,40,10">
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="180"/>
-                    <RowDefinition Height="180"/>
-                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="150"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="155"/>
-                    <ColumnDefinition Width="155"/>
-                    <ColumnDefinition Width="155"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="0" Grid.Column="0" Text="Electrónicos" FontSize="Small" FontAttributes="Bold" TextColor="#50575E" CornerRadius="30" BackgroundColor="#DFE5ED" x:Name="btnElec"/>
-                <Button Grid.Row="0" Grid.Column="1" Text="Oficina" FontSize="Small" FontAttributes="Bold" TextColor="#50575E" CornerRadius="30" BackgroundColor="#DFE5ED" x:Name="btnOficina"/>
-                <Button Grid.Row="0" Grid.Column="2" Text="Papel" FontSize="Small" FontAttributes="Bold" TextColor="#50575E" CornerRadius="30" BackgroundColor="#DFE5ED" x:Name="btnPapel"/>
-                <Button Grid.Row="1" Grid.Column="0" Text="Cómputo" FontSize="Small" FontAttributes="Bold" TextColor="#50575E" CornerRadius="30" BackgroundColor="#DFE5ED" x:Name="btnCompu"/>
-                <Button Grid.Row="1" Grid.Column="1" Text="Iluminación" FontSize="Small" FontAttributes="Bold" TextColor="#50575E" CornerRadius="30" BackgroundColor="#DFE5ED" x:Name="btnIlum"/>
-                <Button Grid.Row="1" Grid.Column="2" Text="Muebles" FontSize="Small" FontAttributes="Bold" TextColor="#50575E" CornerRadius="30" BackgroundColor="#DFE5ED" x:Name="btnMuebles"/>
+                <Button Grid.Row="0" Grid.Column="0" Text="Electrónicos" FontSize="Small" FontAttributes="Bold" TextColor="#6612A6" CornerRadius="30" BackgroundColor="#B056F3" x:Name="btnElec"/>
+                <Button Grid.Row="0" Grid.Column="1" Text="Oficina" FontSize="Small" FontAttributes="Bold" TextColor="#6612A6" CornerRadius="30" BackgroundColor="#B056F3" x:Name="btnOficina"/>
+                <Button Grid.Row="0" Grid.Column="2" Text="Papel" FontSize="Small" FontAttributes="Bold" TextColor="#6612A6" CornerRadius="30" BackgroundColor="#B056F3" x:Name="btnPapel"/>
+                <Button Grid.Row="1" Grid.Column="0" Text="Cómputo" FontSize="Small" FontAttributes="Bold" TextColor="#6612A6" CornerRadius="30" BackgroundColor="#B056F3" x:Name="btnCompu"/>
+                <Button Grid.Row="1" Grid.Column="1" Text="Iluminación" FontSize="Small" FontAttributes="Bold" TextColor="#6612A6" CornerRadius="30" BackgroundColor="#B056F3" x:Name="btnIlum"/>
+                <Button Grid.Row="1" Grid.Column="2" Text="Muebles" FontSize="Small" FontAttributes="Bold" TextColor="#6612A6" CornerRadius="30" BackgroundColor="#B056F3" x:Name="btnMuebles"/>
             </Grid>
         </StackLayout>
     </StackLayout>

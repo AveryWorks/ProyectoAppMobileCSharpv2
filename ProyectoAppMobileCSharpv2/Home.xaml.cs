@@ -24,16 +24,36 @@ namespace ProyectoAppMobileCSharpv2
             btnPapel.Clicked += BtnPapel_Clicked;
 
             Carrito.Clicked += Carrito_Clicked;
-            Logout.Clicked += Logout_Clicked;
+            Perfil.Clicked += Perfil_Clicked;
+            //Logout.Clicked += Logout_Clicked;
+            Ayuda.Clicked += Ayuda_Clicked;
+            btnMapa.Clicked += BtnMapa_Clicked;
+            btnVideo.Clicked += BtnVideo_Clicked;
 
-            
-            
         }
-
-        private void Logout_Clicked(object sender, EventArgs e)
+        private void BtnVideo_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            ((NavigationPage)this.Parent).PushAsync(new VideoCompras());
         }
+
+        private void BtnMapa_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new MapaTiendas());
+        }
+        private void Ayuda_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new Ayuda());
+        }
+
+        private void Perfil_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new Perfil());
+        }
+
+        //private void Logout_Clicked(object sender, EventArgs e)
+        //{
+        //    DisplayAlert("En desarrollo","Logout no está programado aún","ok");
+        //}
 
         private void Carrito_Clicked(object sender, EventArgs e)
         {
