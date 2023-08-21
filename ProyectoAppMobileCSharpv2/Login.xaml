@@ -5,14 +5,14 @@
     <ContentPage.Content>
         <StackLayout>
             <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto">
-                <Image Grid.Row="0" Source="LogoOH.png" WidthRequest="100"
+                <Image Grid.Row="0" Source="OfficeHubListLogo.png" WidthRequest="100"
                    HeightRequest="100" Margin="0,50,0,30"/>
                 <!--<Label Text="test" x:Name="test"></Label>-->
 
                 <StackLayout Grid.Row="1">
                     <Label Text="Log In"
                            FontSize="25"
-                           TextColor="#444446"
+                           TextColor="#6612A6"
                            HorizontalTextAlignment="Center"
                            FontAttributes="Bold"/>
 
@@ -22,10 +22,10 @@
                            Padding="25,0,25,0"
                            HeightRequest="50"
                            CornerRadius="15">
-                        <Entry TextColor="#444446"
+                        <Entry TextColor="#6612A6"
                                   FontSize="18"
                                   Placeholder="Correo"
-                                  PlaceholderColor="#7c7c7c"
+                                  PlaceholderColor="#B056F3"
                                   x:Name="emailLogin"/>
                     </Frame>
 
@@ -36,31 +36,31 @@
                            HeightRequest="50"
                            CornerRadius="15">
 
-                        <Entry TextColor="#444446"
+                        <Entry TextColor="#6612A6"
                                   FontSize="18"
                                   Placeholder="Contraseña"
                                   IsPassword="True"
-                                  PlaceholderColor="#7c7c7c"
+                                  PlaceholderColor="#B056F3"
                                   x:Name="passLogin"/>
 
                     </Frame>
 
                     <RelativeLayout Padding="25">
-                        <CheckBox Color="#d9d9d9"
+                        <CheckBox Color="#B056F3"
                                   IsChecked="False"
                                   x:Name="checkboxLogin"
                                   Margin="15,0,0,0"
                                   CheckedChanged="checkboxLogin_CheckedChanged"/>
 
                         <Label Text="Mostrar contraseña"
-                               TextColor="#7c7c7c"
+                               TextColor="#6612A6"
                                FontSize="18"
                                RelativeLayout.XConstraint="50"
                                RelativeLayout.YConstraint="3"/>
 
                         <Button x:Name="btnSignup"
                             Text="Sign Up"
-                            TextColor="#7c7c7c"
+                            TextColor="#6612A6"
                             FontSize="18"
                             BackgroundColor="Transparent"
                             RelativeLayout.XConstraint="300"
@@ -71,7 +71,7 @@
 
                     <Button x:Name="btnLogin"
                             Text="Log in"
-                            TextColor="#50575E"
+                            TextColor="#6612A6"
                             BorderWidth="2"
                             BorderColor="#f3f2ff"
                             Margin="10,0,10,0"
@@ -79,7 +79,7 @@
                             Clicked="btnLogin_Clicked"
                             HeightRequest="60"
                             CornerRadius="30"
-                            BackgroundColor="#DFE5ED"/>
+                            BackgroundColor="#B056F3"/>
 
                 </StackLayout>
 

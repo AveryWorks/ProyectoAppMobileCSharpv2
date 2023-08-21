@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoAppMobileCSharpv2.Ayuda">
+
+    <StackLayout>
+        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto">
+            <!--<Image Grid.Row="0" Source="OfficeHubListLogo.png" WidthRequest="100"
+                   HeightRequest="70" Margin="0,50,0,30"/>-->
+
+            <StackLayout Grid.Row="1">
+                <Label Text="Ayuda"
+                           FontSize="25"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"
+                           FontAttributes="Bold"/>
+
+                <Label Text="Nuestra aplicación de Office Hub List se encarga de ayudarte a mantener un orden en tus listas de compras en tiendas de electrónicos, papelería u oficina! "
+                           FontSize="15"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"/>
+
+                <Label Text="Con Office Hub List puedes llevar orden de tus compras, y agregar o eliminar productos conforme los necesites o ya los hayas adquirido. "
+                           FontSize="15"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"/>
+
+                <Label Text="1. Entra a la aplicación de Office Hub List. Si no tienes una cuenta puedes entrar a la sección de Signup y crear una cuenta, y realizar el Login con tu cuenta propia."
+                           FontSize="15"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"/>
+
+                <Label Text="2. En la página principal lograrás ver las categorias de productos existentes en el catálogo, de los cuales podrás escoger."
+                           FontSize="15"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"/>
+
+                <Label Text="3. Cuando ingreses a una de las categorías, podrás agregar productos a tu carrito, seleccionando el botón con el símbolo de más."
+                           FontSize="15"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"/>
+
+                <Label Text="4. Para ver los elementos guardados en tu carrito, puedes ir a la página principal y seleccionar el botón con el símbolo de un carrito. Desde el carrito podrás manejar los productos que vas comprando eliminandolos por medio del botón con el símbolo de menos."
+                           FontSize="15"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"/>
+
+                <Label Text="5. En el menú principal además podrás accesar tu perfil, y ver tu información personal en la aplicación."
+                           FontSize="15"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"/>
+
+                <Label Text="6. En este menú, tendrás también la opción de ver un video de recomendación, o cerrar tu sesión de la aplicación."
+                           FontSize="15"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"/>
+
+                <Label Text="OFFICE HUB LIST"
+                           FontSize="15"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"
+                           FontAttributes="Bold"/>
+
+            </StackLayout>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>

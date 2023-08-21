@@ -16742,31 +16742,34 @@ namespace ProyectoAppMobileCSharpv2.Droid
 			public const int preference_list_divider_material = 2131165353;
 			
 			// aapt resource value: 0x7F0700AA
-			public const int reciclado = 2131165354;
+			public const int Profile_logo = 2131165354;
 			
 			// aapt resource value: 0x7F0700AB
-			public const int remove = 2131165355;
+			public const int reciclado = 2131165355;
 			
 			// aapt resource value: 0x7F0700AC
-			public const int satinado = 2131165356;
+			public const int remove = 2131165356;
 			
 			// aapt resource value: 0x7F0700AD
-			public const int shoppingcart = 2131165357;
+			public const int satinado = 2131165357;
 			
 			// aapt resource value: 0x7F0700AE
-			public const int test_custom_background = 2131165358;
+			public const int shoppingcart = 2131165358;
 			
 			// aapt resource value: 0x7F0700AF
-			public const int tooltip_frame_dark = 2131165359;
+			public const int test_custom_background = 2131165359;
 			
 			// aapt resource value: 0x7F0700B0
-			public const int tooltip_frame_light = 2131165360;
+			public const int tooltip_frame_dark = 2131165360;
 			
 			// aapt resource value: 0x7F0700B1
-			public const int Trituradora = 2131165361;
+			public const int tooltip_frame_light = 2131165361;
 			
 			// aapt resource value: 0x7F0700B2
-			public const int videobin = 2131165362;
+			public const int Trituradora = 2131165362;
+			
+			// aapt resource value: 0x7F0700B3
+			public const int videobin = 2131165363;
 			
 			static Drawable()
 			{
@@ -18885,14 +18888,17 @@ namespace ProyectoAppMobileCSharpv2.Droid
 		public partial class Mipmap
 		{
 			
-			// aapt resource value: 0x7F0C0000
-			public const int icon = 2131492864;
-			
 			// aapt resource value: 0x7F0C0001
-			public const int icon_round = 2131492865;
+			public const int icon = 2131492865;
 			
 			// aapt resource value: 0x7F0C0002
-			public const int launcher_foreground = 2131492866;
+			public const int icon_round = 2131492866;
+			
+			// aapt resource value: 0x7F0C0000
+			public const int ic_launcher = 2131492864;
+			
+			// aapt resource value: 0x7F0C0003
+			public const int launcher_foreground = 2131492867;
 			
 			static Mipmap()
 			{

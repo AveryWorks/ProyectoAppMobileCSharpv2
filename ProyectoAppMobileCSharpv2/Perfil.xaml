@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoAppMobileCSharpv2.Perfil">
+
+    <StackLayout>
+        
+        
+        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto">
+            <Image Grid.Row="0" Source="Profile_logo.png" WidthRequest="100"
+                   HeightRequest="70" Margin="0,50,0,30"/>
+
+            <StackLayout Grid.Row="1">
+                <Label Text="Mi Perfil"
+                           FontSize="25"
+                           TextColor="#444446"
+                           HorizontalTextAlignment="Center"
+                           FontAttributes="Bold"/>
+
+                <Frame BorderColor="#F1f1f1"
+                           BackgroundColor="#F1f1f1"
+                           Margin="15"
+                           Padding="25,0,25,0"
+                           HeightRequest="50"
+                           CornerRadius="15">
+
+                    <Entry TextColor="#444446"
+                                  FontSize="18"
+                                  Placeholder="Nombre"
+                                  PlaceholderColor="#7c7c7c"
+                                  IsReadOnly="True"
+                                  x:Name="namePerfil"/>
+                </Frame>
+
+                <Frame BorderColor="#F1f1f1"
+                           BackgroundColor="#F1f1f1"
+                           Margin="15"
+                           Padding="25,0,25,0"
+                           HeightRequest="50"
+                           CornerRadius="15">
+
+                    <Entry TextColor="#444446"
+                                  FontSize="18"
+                                  Placeholder="Correo"
+                                  PlaceholderColor="#7c7c7c"
+                                  IsReadOnly="True"
+                                  x:Name="emailPerfil"/>
+                </Frame>
+
+                <Frame BorderColor="#F1f1f1"
+                           BackgroundColor="#F1f1f1"
+                           Margin="15"
+                           Padding="25,0,25,0"
+                           HeightRequest="50"
+                           CornerRadius="15">
+
+                    <Entry TextColor="#444446"
+                                  FontSize="18"
+                                  Placeholder="Contraseña"
+                                  IsPassword="True"
+                                  PlaceholderColor="#7c7c7c"
+                                  IsReadOnly="True"
+                                  x:Name="passPerfil"/>
+                </Frame>
+
+                <RelativeLayout Padding="25">
+                    <CheckBox Color="#d9d9d9"
+                                  IsChecked="False"
+                                  x:Name="checkboxPerfil"
+                                  Margin="15,0,0,0"
+                                  CheckedChanged="checkboxPerfil_CheckedChanged"/>
+
+                    <Label Text="Mostrar contraseña"
+                               TextColor="#7c7c7c"
+                               FontSize="18"
+                               RelativeLayout.XConstraint="50"
+                               RelativeLayout.YConstraint="3"/>
+
+                    <!--<Button x:Name="btnDelete"
+                            Text="Delete account"
+                            TextColor="#7c7c7c"
+                            FontSize="18"
+                            BackgroundColor="Transparent"
+                            RelativeLayout.XConstraint="300"
+                            RelativeLayout.YConstraint="-8.8"
+                            Clicked="btnDelete_Clicked"
+                            TextTransform="None"/>-->
+
+                </RelativeLayout>
+
+                <!--<Button x:Name="btnUpdate"
+                            Text="Guardar"
+                            TextColor="#50575E"
+                            BorderWidth="2"
+                            Margin="10,0,10,0"
+                            FontSize="18"
+                            Clicked="btnUpdate_Clicked"
+                            HeightRequest="60"
+                            CornerRadius="30"
+                            BackgroundColor="#DFE5ED"/>-->
+
+            </StackLayout>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
